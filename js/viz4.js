@@ -67,6 +67,7 @@ function plotrun(data){
       },
       xAxis: {
           type: 'value',
+          name: 'cost',
           splitLine: {
               lineStyle: {
                   type: 'dashed'
@@ -75,6 +76,7 @@ function plotrun(data){
       },
       yAxis: {
           type: 'value',
+          name: 'reach',
           splitLine: {
               lineStyle: {
                   type: 'dashed'

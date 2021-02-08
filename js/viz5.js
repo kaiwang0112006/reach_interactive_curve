@@ -5,7 +5,7 @@ function vizDraw(){
     /* Parsing the parameters which will be fetched by 3 select tag. */
     var fetchR = fetchChoice();
     var  year = fetchR[0];
-         market = '北京';
+         market = 'national';
          TA = 'Total';
          Publisher = 'OTV';
          brand = "Extra";
@@ -67,6 +67,7 @@ function plotrun(data){
       },
       xAxis: {
           type: 'value',
+          name: 'cost',
           splitLine: {
               lineStyle: {
                   type: 'dashed'
@@ -75,6 +76,7 @@ function plotrun(data){
       },
       yAxis: {
           type: 'value',
+          name: 'reach',
           splitLine: {
               lineStyle: {
                   type: 'dashed'
@@ -186,7 +188,7 @@ function parseData(data,year, market, TA, Publisher, brand){
 	if (year != 'all'){
 		data = dimple.filterData(data, "Year", year);
 	};
-
+  //alert(data.length)
 	if (market != 'all'){
 		data = dimple.filterData(data, "Market", market);
 	}else{
@@ -198,7 +200,7 @@ function parseData(data,year, market, TA, Publisher, brand){
     }
     data = filterdata;
   };
-
+  //alert(data.length)
   if (TA != 'all'){
 		data = dimple.filterData(data, "TA", TA);
 	}else{
@@ -210,7 +212,7 @@ function parseData(data,year, market, TA, Publisher, brand){
     }
     data = filterdata;
   }
-
+  //alert(data.length)
   if (Publisher != 'all'){
 		data = dimple.filterData(data, "Publisher", Publisher);
 	}else{
@@ -222,11 +224,11 @@ function parseData(data,year, market, TA, Publisher, brand){
     }
     data = filterdata;
   }
-
+  //alert(Publisher,data.length)
   if (brand != 'all'){
 		data = dimple.filterData(data, "Brand", brand);
 	};
-
+  //alert(data.length)
   var hisdata = []
   for (i in data){
     hisdata.push([data[i]['cost'],data[i]['reach']])
