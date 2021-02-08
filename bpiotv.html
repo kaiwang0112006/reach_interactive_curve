@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="js/d3.min.js"></script>
+  <script src="js/jquery110.js"></script>
+  <script src="js/viz5.js"></script>
+  <script src="js/dimple.v2.2.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/dist/echarts.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@1/dist/echarts-gl.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@1/dist/ecStat.min.js"></script>
+  <style>
+    .surrate {
+    font-weight:bolder;
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+  vizDraw()
+
+  </script>
+
+<h2>Reach Curve of BPI OTV</h2>
+<br><br>
+<div style="float:left">
+	<span> Year: &nbsp;
+		<select name = "year" id='year'>
+		    <option  value='all' selected='selected'>all</option>
+			<option  value='2019'>2019</option>
+      <option  value='2020'>2020</option>
+		</select>
+	</span>&nbsp;&nbsp;
+	<span> Market: &nbsp;
+		<select name = "market" id='market'>
+        <option  value='北京'>北京</option>
+        <option  value='长春'>长春</option>
+        <option  value='长沙'>长沙</option>
+        <option  value='常州'>常州</option>
+        <option  value='成都'>成都</option>
+        <option  value='重庆'>重庆</option>
+        <option  value='大连'>大连</option>
+        <option  value='东莞'>东莞</option>
+        <option  value='佛山'>佛山</option>
+        <option  value='福州'>福州</option>
+        <option  value='广州'>广州</option>
+        <option  value='贵阳'>贵阳</option>
+        <option  value='哈尔滨'>哈尔滨</option>
+        <option  value='杭州'>杭州</option>
+        <option  value='合肥'>合肥</option>
+        <option  value='惠州'>惠州</option>
+        <option  value='济南'>济南</option>
+        <option  value='嘉兴'>嘉兴</option>
+        <option  value='金华'>金华</option>
+        <option  value='昆明'>昆明</option>
+        <option  value='南京'>南京</option>
+        <option  value='南宁'>南宁</option>
+        <option  value='南通'>南通</option>
+        <option  value='national'>national</option>
+        <option  value='宁波'>宁波</option>
+        <option  value='青岛'>青岛</option>
+        <option  value='泉州'>泉州</option>
+        <option  value='上海'>上海</option>
+        <option  value='绍兴'>绍兴</option>
+        <option  value='深圳'>深圳</option>
+        <option  value='石家庄'>石家庄</option>
+        <option  value='苏州'>苏州</option>
+        <option  value='台州'>台州</option>
+        <option  value='太原'>太原</option>
+        <option  value='唐山'>唐山</option>
+        <option  value='天津'>天津</option>
+        <option  value='潍坊'>潍坊</option>
+        <option  value='温州'>温州</option>
+        <option  value='乌鲁木齐'>乌鲁木齐</option>
+        <option  value='无锡'>无锡</option>
+        <option  value='武汉'>武汉</option>
+        <option  value='西安'>西安</option>
+        <option  value='厦门'>厦门</option>
+        <option  value='徐州'>徐州</option>
+        <option  value='烟台'>烟台</option>
+        <option  value='郑州'>郑州</option>
+		</select>
+	</span>&nbsp;&nbsp;
+	<span> TA: &nbsp;
+		<select name = "TA" id='TA'>
+      <option  value='Total'>Total by Campaign</option>
+      <option  value='P13-35'>P13-35</option>
+		</select>
+	</span>&nbsp;&nbsp;
+  <span> Publisher: &nbsp;
+		<select name = "Publisher" id='Publisher'>
+        <option  value='OTV'>OTV</option>
+		</select>
+	</span>&nbsp;&nbsp;
+  <span> Brand: &nbsp;
+		<select name = "brand" id='brand'>
+      <option  value='Extra'>Extra</option>
+		</select>
+</div>
+<br>
+<div id="viz" style="float:left;position:absolute;height: 100%; width:100%"></div>
+</body>
+</html>
