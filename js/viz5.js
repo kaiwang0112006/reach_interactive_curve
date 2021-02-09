@@ -6,9 +6,9 @@ function vizDraw(){
     var fetchR = fetchChoice();
     var  year = fetchR[0];
          market = 'national';
-         TA = 'Total';
+         TA = 'P15-30';
          Publisher = 'OTV';
-         brand = "Extra";
+         brand = fetchR[4];
 
 	d3.csv("bpiotv.csv", function(error, data){
 		// Set svg object

@@ -6,7 +6,7 @@ function vizDraw(){
     var fetchR = fetchChoice();
     var  year = fetchR[0];
          market = 'national';
-         TA = 'Total';
+         TA = 'P13-35';
          Publisher = 'Total';
          brand = fetchR[4];
 
